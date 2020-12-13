@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Equimph</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://equimph.com/"/>
+  <updated>2020-12-13T12:58:08.009Z</updated>
+  <id>http://equimph.com/</id>
+  
+  <author>
+    <name>Matrix Qiu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Statistics in Econometrics</title>
+    <link href="http://equimph.com/2020/10/Economics001/"/>
+    <id>http://equimph.com/2020/10/Economics001/</id>
+    <published>2020-10-11T12:49:11.000Z</published>
+    <updated>2020-12-13T12:58:08.009Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="概率论中的两个定理">概率论中的两个定理</h2><p>计量经济学建立在概率论与统计学之上，下面简要梳理一下需要使用的定理及公式。</p><p>首先是两个定理</p><h3 id="thm.1-law-of-large-numbers"><strong>Thm.1 [Law of large numbers]</strong></h3><p>strong ver.</p><p>Let <span class="math inline">\(X_1,X_2,\dots\)</span> be an infinite sequence of independent and identically distributed(独立同分布) Lebesgue integrable random variables with expected value <span class="math inline">\(E(X_1)=E(X_2)=\dots=\mu\)</span>, then the sample average <span class="math display">\[\bar{X_n} =\frac{1}{n}\sum_{i=1}^{n}X_i\]</span> converges to the expected value <span class="math display">\[\bar{X_n}\to\mu\quad\mathrm{for}\quad n\to\infty.\]</span> (Lebesgue integrability of <span class="math inline">\(X_j\)</span> means that the expected value <span class="math inline">\(E(X_j)\)</span> exists according to <a href="https://en.wikipedia.org/wiki/Lebesgue_integration" target="_blank" rel="noopener">Lebesgue integration</a> and is finite. It does <em>not</em> mean that the associated probability measure is <a href="https://en.wikipedia.org/wiki/Absolutely_continuous" target="_blank" rel="noopener">absolutely continuous</a> with respect to <a href="https://en.wikipedia.org/wiki/Lebesgue_measure" target="_blank" rel="noopener">Lebesgue measure</a>.)</p><p>weak ver.</p><p>It states that the sample average converges in probability to the expected value <span class="math display">\[\bar{X_n}\stackrel{p}{\to}\mu\quad\mathrm{as}\ n\to\infty\]</span> i.e., for any positive <span class="math inline">\(\varepsilon\)</span>, <span class="math display">\[\lim_{n\to\infty}\Pr(|\bar{X_n-\mu}|&gt;\varepsilon) = 0.\]</span></p><h3 id="thm.2-central-limit-theorem">Thm.2 [Central Limit Theorem]</h3><p>Suppose <span class="math inline">\(\{X_1,\dots,X_n\}\)</span> is a sequence of i.i.d. random variables with <span class="math inline">\(E(X_i)=\mu\)</span> and <span class="math inline">\(\mathrm{Var}(X_i)=\sigma^2&lt;\infty\)</span>. Then as <span class="math inline">\(n\)</span> approaches infinity, the random variables <span class="math inline">\(\bar{X_n}-\mu\)</span> converge in distribution to a normal <span class="math inline">\(N(0,\frac{\sigma^2}{n})\)</span>, i.e., <span class="math display">\[\bar{X_n}-\mu\stackrel{d}{\to}N\left(0,\frac{\sigma^2}{n}\right)\]</span></p><h2 id="统计学相关知识">统计学相关知识</h2><p>设<span class="math inline">\(\{X_i\}_{i=1}^{n}\)</span>为一列随机变量，均值均为<span class="math inline">\(\mu\)</span>，方差均为<span class="math inline">\(\sigma^2\)</span>.</p><ul><li>样本均值</li></ul><p><span class="math display">\[\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i\]</span></p><p>（当n趋向无穷时，<span class="math inline">\(\bar{X}\)</span>会趋向总体均值<span class="math inline">\(\mu\)</span>，这是无偏估计的要求)</p><ul><li>样本方差</li></ul><p><span class="math display">\[s^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2\]</span></p><p>下面证明为什么需要除以<span class="math inline">\(n-1\)</span>，而不是<span class="math inline">\(n\)</span>. <span class="math display">\[E(\bar{X})=E\left(\frac{1}{n}\sum_{i=1}^{n}X_i\right)=\frac{1}{n}\sum_{i=1}^{n}E(X_i)=\frac{1}{n}\times n\times\mu=\mu.\]</span></p><p><span class="math display">\[\begin{aligned}E(\bar{X}-\mu)^2&amp;=E(\bar{X}-E(\bar{X}))^2=\mathrm{Var}(\bar{X})\\&amp;=\mathrm{Var}\left(\frac{1}{n}\sum_{i=1}^{n}X_i\right)\\&amp;=\frac{1}{n^2}\sum_{i=1}^{n}\mathrm{Var}(X_i)\\&amp;=\frac{1}{n^2}\times n\times\sigma^2\\&amp;=\frac{\sigma^2}{n}\end{aligned}\]</span> 在运用统计分析时，可能不知道<span class="math inline">\(\mu\)</span>的值，所以需要使用样本均值<span class="math inline">\(\bar{X}\)</span>来代替，假设公式形式如下 <span class="math display">\[s^2=\frac{1}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2\]</span> 验证是否是无偏估计 <span class="math display">\[\begin{aligned}E(s^2)&amp;=E\left(\frac{1}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2\right)\\&amp;=E\left(\frac{1}{n}\sum_{i=1}^{n}((X_i-\mu)-(\bar{X}-\mu))^2\right)\\&amp;=E\left(\frac{1}{n}\sum_{i=1}^{n}(X_i-\mu)^2-\frac{2}{n}\sum_{i=1}^{n}(X_i-\mu)(\bar{X}-\mu)+\frac{1}{n}\sum_{i=1}^{n}(\bar{X}-\mu)^2\right)\\&amp;=E\left(\frac{1}{n}\sum_{i=1}^{n}(X_i-\mu)^2-2(\bar{X}-\mu)^2+(\bar{X}-\mu)^2\right)\\&amp;=E\left(\frac{1}{n}\sum_{i=1}^{n}(X_i-\mu)^2\right)-E(\bar{X}-\mu)^2\\&amp;&lt;E\left(\frac{1}{n}\sum_{i=1}^{n}(X_i-\mu)^2\right)=\sigma^2\end{aligned}\]</span></p><p>即如果使用<span class="math inline">\(n\)</span>作为分母，不能保证是无偏估计 <span class="math display">\[E(s^2)=\sigma^2-\frac{\sigma^2}{n}=\frac{n-1}{n}\sigma^2\]</span> 故，使用<span class="math inline">\(\frac{n}{n-1}\)</span>因子进行修正即可满足条件.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="经济" scheme="http://equimph.com/categories/%E7%BB%8F%E6%B5%8E/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>碎碎念</title>
+    <link href="http://equimph.com/2020/05/life001/"/>
+    <id>http://equimph.com/2020/05/life001/</id>
+    <published>2020-05-14T20:04:55.000Z</published>
+    <updated>2020-12-13T12:58:08.009Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="近来的状况">近来的状况</h2><p>这么久不写博客了，还是来写写吧。</p><p>最近生物钟比较紊乱，近几天在进行严肃的调整。有好多想做的事，有好多想上的课。但严重的问题是自己的应修课程留下了较大的空缺，形势严峻。</p><p>在这里列举一些情况比较严重的课程：</p><ul><li>会计学</li><li>微观经济学</li><li>微积分（的熟练掌握）</li></ul><p>自己揽下的锅自己背，下面还有好多好多的ddl等着我，能力也不怎么样，再来列举一波：</p><ul><li>某网站的全套施工方案（Django + Vue.js）（比较急）</li><li>python课程大作业 * 2</li><li>一堆通识论文</li></ul><p>程序设计的水平直线下降，动态规划啥都不会，数学证明没有思路，归根结底一个字——菜！菜不是办法啊，所以要学习啊，还是先学课内的吧。</p><p>什么东西都要懂，什么东西都要会，最终可能是什么都不精通。某些时候，可能还需要客观地判断一下自己的能力。即便我进了经济学系，未来又会怎么样？谁也说不准。唯一感到有压力的是，时间不够了，准备不充分了。想到几年后的事需要这么早进行准备不知不觉发出感慨。</p><p>说不准到了国外还要上语言学校呢。说不准出不了国呢。说不准自己连研究生都上不了呢。这一切都说不准。经济学、金融、金工究竟能进哪个呢？能不能学好呢？自己的兴趣毕竟不在商科，但我希望我能够爱上商科。先把课内的东西搞定吧。</p><h3 id="其他感触">其他感触</h3><p>有点在意邻国的状况，毕竟各国都可以说处于封禁的状态，EJU今年也取消了，这形势可谓十分严峻。自己的语言也没怎么学，TOFEL不知道要考几次，总而言之，有可能出现gap的状况。</p><p>最近有点小感冒，心情可能也比较平静，决定拿京都动画的几部老番出来看看。推的组合已经基本固定了，应该不会有什么变化，imas全系列，Sony旗下全部，东方，Vocaloid。看看自己什么时候会退坑吧。</p><p>国外的书是真的贵啊，买不起系列。什么时候有钱了，买一些经典教材回来。中国的信用卡跨区刷不起来，也让人比较恼火。入了Spotify，感觉很棒，有空试试Apple Music。</p><p>苹果全系列我吹爆，但是没钱，等几年后再说吧。</p><p>最后，放一个MV得了。</p><iframe width="560" height="315" src="https://www.youtube.com/embed/pfiylXIhN6k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://equimph.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Baire Category Theorem</title>
+    <link href="http://equimph.com/2020/03/Mathematics001/"/>
+    <id>http://equimph.com/2020/03/Mathematics001/</id>
+    <published>2020-03-10T22:45:11.000Z</published>
+    <updated>2020-12-13T12:58:08.009Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="completeness">Completeness</h2><p><br> <strong>Def.1</strong> A sequence <span class="math inline">\((x_n)\)</span> in a metric space <span class="math inline">\((X,\rho)\)</span> is called Cauchy if <span class="math inline">\(\forall\varepsilon&gt;0,\ \exists N=N(\varepsilon)\)</span> s.t. if <span class="math inline">\(m&gt;n&gt;N\)</span>,</p><p><span class="math display">\[\rho(x_m,x_n)&lt;\varepsilon\]</span></p><p>Rmk:<span class="math inline">\(\quad\rho(x_m,x_n)=|x_m-x_n| : \mathbb{R}\)</span></p><p><strong>Thm.2</strong> <span class="math inline">\((\mathbb{R}^d,\|\cdot\|)\)</span> is complete</p><p><em>Proof.</em> <span class="math inline">\(\quad\)</span> Recall that for <span class="math inline">\(x=(x_1,\dots,x_n),y=(y_1,\dots,y_n)\)</span>, <span class="math display">\[\|x-y\|:=\sqrt{\sum_{j=1}^{n}(x_j-y_j)^2}\]</span></p><p>Let <span class="math inline">\((x_n)\subset\mathbb{R}^d\)</span> be Cauchy, i.e., <span class="math inline">\(\forall\varepsilon&gt;0,\exists N=N(\varepsilon)\)</span> s.t. if <span class="math inline">\(m&gt;n&gt;N\)</span>, <span class="math display">\[\|x_m-x_n\|=\sqrt{\sum_{j=1}^{d}|x_m^{(j)}-x_n^{(j)}|^2}&lt;\varepsilon.\]</span> <span class="math inline">\(\forall 1\le k\le d\)</span> <span class="math display">\[|x_m^{(k)}-x_n^{(k)}|=\sqrt{|x_m^{(k)}-x_n^{(k)}|^2}&lt;\varepsilon\]</span> I.e. <span class="math inline">\(\left(x_n^{(k)}\right)_{n=1}^{\infty}\subset\mathbb{R}\)</span> is Cauchy. So, <span class="math inline">\(\exists x^{(k)}\in\mathbb{R}\)</span>. s.t. <span class="math inline">\(x_n^{(k)}\to x^{(k)}\)</span>. <span class="math display">\[x:=(x^{(1)},x^{(2)},\dots,x^{(d)})\in\mathbb{R}^d\\\|x_n-x\|=\sqrt{\sum_{j=1}^{d}|x_n^{(j)}-x^{(j)}|^2}\le\sum_{j=1}^{n}|x_n^{(j)}-x^{(j)}|\to 0\quad(\mathrm{as}\ n\to\infty)\]</span> Thus, <span class="math inline">\(x_n\to x\in\mathbb{R}^d,\ (\mathbb{R}^d,\|\cdot\|)\)</span> is complete.</p><p><strong>Thm.3 [Cantor nested sets thm]</strong></p><p>Let <span class="math inline">\((X,\rho)\)</span> be a metric space. Then the following are equivalent:</p><ol type="1"><li><span class="math inline">\((X,\rho)\)</span> is complete</li><li>If <span class="math inline">\(\Omega_1\supset\Omega_2\supset\dots\)</span> be a sequence of non-empty closed sets and <span class="math inline">\(\mathrm{diam}\Omega_n\to 0\)</span>, then <span class="math inline">\(\exists!\xi\in\cap\Omega_n\)</span>.</li></ol><h2 id="baire-category-thm-application">Baire Category Thm &amp; Application</h2><p><strong>Thm. [Baire Category thm]</strong></p><p>Let <span class="math inline">\((X,\rho)\)</span> is a complete metric space. If <span class="math inline">\(A_n\)</span> is a sequence of closed subsets s.t. <span class="math inline">\(\mathrm{int}A_n=\varnothing\)</span>, then <span class="math inline">\(\mathrm{int}\left(\bigcup_{n=1}^{\infty}A_n\right)=\varnothing\)</span>.</p><p><em>Proof.</em> If not, <span class="math inline">\(\exists\xi\in\bigcup_{n=1}^{\infty}A_n\)</span> and <span class="math inline">\(\exists\delta_1&gt;0\)</span> s.t. <span class="math display">\[\overline{B_{\delta_1}(\xi)}\subset\bigcup{n=1}^{\infty}A_n,\ \delta_1&lt;\frac{1}{1}\\B_{\delta_1}(\xi)\setminus A_1\neq\varnothing,\mathrm{open}\]</span> By AC(Axion of Choice), <span class="math inline">\(\exists x_2\in B_{\delta_1}(\xi)\setminus A_1\)</span> and <span class="math inline">\(\delta_2&lt;\frac{1}{2}\)</span>, s.t.</p><p><span class="math display">\[\overline{B_{\delta_2}(x_2)}\subset B_{\delta_1}(\xi)\setminus A_1.\\B_{\delta_2}(x_2)\setminus A_2\neq\varnothing,\mathrm{open}\]</span> etc.</p><ul><li><span class="math inline">\(\overline{B_{\delta_1}(x_1)}\supset\overline{B_{\delta_2}(x_2)}\supset\dots.\)</span></li><li><span class="math inline">\(x_n\notin A_j,\ j=1,2,\dots,n-1\)</span>,</li></ul><p><span class="math display">\[\begin{align}x_n\to\xi,\ \xi\notin A_n,n\in\mathbb{N} \Rightarrow\ &amp; \xi\notin\bigcup_{n=1}^{\infty}A_n \\       &amp; \xi\in \overline{B_{\delta_1}(x_1)} \quad \mathrm{contradicts}.\end{align}\]</span></p><p><strong>Problems</strong></p><ol type="1"><li>Let <span class="math inline">\(X=C\left[0,1\right]\)</span>, equipped with the norm <span class="math inline">\(\|f\|_\infty=\mathrm{sup}_{\left[0,1\right]}|f|\)</span> for each <span class="math inline">\(f\in X\)</span>.</li></ol><p>Prove that <span class="math inline">\(\Omega=\{f\in X:f\)</span> is nowhere differentiable<span class="math inline">\(\}\)</span> is dense in <span class="math inline">\(X\)</span>.</p><p><em>Proof.</em></p><p>For each <span class="math inline">\(n\in\mathbb{N}\)</span>, consider a set of functions</p><p><span class="math display">\[A_n=\left\{f\in X:\left|\frac{f(t+h)-f(t)}{h}\right|\le n\mathrm{\ for\ some\ }t\in[0,1]\ s.t.\ t+h\in[0,1]\ \mathrm{and\ } h\neq 0\right\}\]</span></p><p>As <span class="math inline">\(h\to 0\)</span>, <span class="math inline">\(A_n\)</span> contains all the continuous functions whose slope is bounded above by <span class="math inline">\(n\)</span> when <span class="math inline">\(x=t\)</span>.<span class="math inline">\(\ \bigcup_n A_n\)</span> represents all <span class="math inline">\(f\in X\)</span> which is differentiable at <span class="math inline">\(t\in[0,1]\)</span>.</p><p>Then we claim each <span class="math inline">\(A_n\)</span> is closed. If we have a sequence <span class="math inline">\(\{f_k\}\)</span> of functions in <span class="math inline">\(A_n\)</span> s.t. <span class="math inline">\(f_k\to f\)</span> uniformly for some <span class="math inline">\(f\in X\)</span>, then <span class="math inline">\(f\in A_n\)</span>. It can be proved as below.</p><p>Fix <span class="math inline">\(n\in\mathbb{N}\)</span> and assume <span class="math inline">\(\{f_k\}_{k=1}^{\infty}\)</span> is a sequence of functions in <span class="math inline">\(A_n\)</span> s.t <span class="math inline">\(f_k\to f\)</span> uniformly. Then for each <span class="math inline">\(k\)</span>, there exists a <span class="math inline">\(t_k\in[0,1]\)</span> s.t. <span class="math display">\[\left|\frac{f_k(t_k+h)-f_k(t_k)}{h}\right|\le n.\]</span></p><p>By Bolzano-Weierstrass Theorem, we have that <span class="math inline">\(\{t_k\}\)</span> has a subsequence which converges <span class="math inline">\(t\)</span>. Denote the subsequence by <span class="math inline">\(\{t_k^\prime\}\)</span>. Then since <span class="math inline">\(\displaystyle{\lim_{k\to\infty}t_k^\prime} = t\)</span> and <span class="math inline">\(\displaystyle{\lim_{k\to\infty}} f_k=f\)</span> we have <span class="math display">\[\left|\frac{f(x+h)-f(t)}{h}\right|=\lim_{k\to\infty}\left|\frac{f_k(t_k^\prime+h)-f_k(t_k^\prime)}{h}\right|\le n.\]</span> And this implies <span class="math inline">\(f\in A_n\)</span>.</p><p>For each given <span class="math inline">\(f\in X\)</span>, we can find a <span class="math inline">\(g\in X\)</span> with its derivative behaving badly. In other words, for each <span class="math inline">\(n\)</span> set <span class="math inline">\(X\setminus A_n\)</span> is dense(it's equivalent to each <span class="math inline">\(A_n\)</span> is nowhere dense). We can build <span class="math inline">\(g\)</span> like below.</p><p>Define a function <span class="math inline">\(\phi\)</span> whose period equals to 1, it holds <span class="math display">\[\phi(x)=\left\{\begin{aligned}2x&amp;,&amp;0\le x\le \frac{1}{2} \\2-2x&amp;,&amp;\frac{1}{2}&lt;x\le 1.\end{aligned}\right.\]</span></p><p>let <span class="math inline">\(\phi_n(x)=2^{-n}\phi(2^n x)\)</span>, then <span class="math inline">\(g=f+\phi_n\)</span>, so <span class="math inline">\(\forall\varepsilon&gt;0,\exists N\in\mathbb{Z}^+\)</span>, s.t. <span class="math inline">\(n&gt;N, \|f-g\|_\infty&lt;\varepsilon\)</span>.</p><p>Then as each of <span class="math inline">\(A_n\)</span> is closed and nowhere dense, by Baire Category Thoerem, we have <span class="math display">\[\bigcup_{n=1}^{\infty} A_n \mathrm{\ doesn&#39;t\ have\ interoir\ in\ }X\]</span> Which implies <span class="math inline">\(\Omega=X\setminus\bigcup_{n=1}^{\infty}A_n\)</span> is dense on <span class="math inline">\(X\)</span>.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="http://equimph.com/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>站名解析</title>
+    <link href="http://equimph.com/2020/03/NameAnalysis/"/>
+    <id>http://equimph.com/2020/03/NameAnalysis/</id>
+    <published>2020-03-06T20:33:15.000Z</published>
+    <updated>2020-12-13T12:58:08.009Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="站名选择">站名选择</h2><p>  一天上午，我经过字母组合选出了equimph这个单词，阴差阳错地竟然真是个单词，意为等值线，很有深意。</p><p>  这个单词构成要素如下：</p><ul><li>Economics：经济学，我向往的专业</li><li>Mathematics：数学，我渴望钻研的方向</li><li>Physics：物理学，我曾经的梦</li><li>Qiu：这个就不解释了</li><li>Equimph：等值线，在这条线上的所有点有相同的值</li></ul><p>  Equimph将作为我记录生活点滴的地方，（大概率会咕），感谢Leo Yang为我提供这样一个平台，是个好上游。</p><h3 id="解读">解读</h3><p>  生活就像在等值线之间的旅行，在场力的作用下，无限地在光锥内向前运动。</p><p>  每一天过去，有喜悦、有痛苦，有收获、有丧失。整个生活轨迹都在等值线上进退。如果逃避现实，就是在等值线上原地踏步甚至到了更低一级的等值线上。但相反，如果每天进步一点，日积月累将是巨大的反差。现在不努力更待何时，沉醉于过去，不愿意做出改变，这终将带来失败。但这不是要完全抛弃过去，过去的幸福与喜悦、美丽的邂逅需要铭记在心，过去的失败与痛苦需要总结原因，转化为前进的动力。</p><p>  最近补完的一部神作《<a href="https://www.bilibili.com/bangumi/play/ep232367" target="_blank" rel="noopener">少女☆歌劇 レヴュースタァライト</a>》让人受益匪浅，舞台少女们对星光闪耀（StarLight）的追求与渴望，那一幕幕精彩的Revue，深刻揭露出了成长道路上注定会经历的激昂、傲慢、嫉妒、绝望、逃避、羁绊，只有正确对待这一切，才能在舞台上闪耀。</p><p>  对于我这个普通人而言在人生舞台上闪耀需要克服同样的困难，也需要更加刻苦努力。</p><p>  转眼间写了一堆大谈特谈的空洞的话，目前所需要学习的东西很多，需要在完成基础课业的情况下完成额外的学习，以下内容本应该出现在更加隐秘的地方的，这里就写了吧。</p><h3 id="展望">展望</h3><p>  有待学习的东西：</p><ul><li>Mathematical Analysis</li><li>Fourier Analysis</li><li>Complex Analysis</li><li>Real Analysis</li><li>Functional analysis</li><li>Methods of Mathematical Physics</li><li>Probability</li><li>Quantum Mechanics</li><li>Contemporary Algebra</li><li>Combinatorics</li><li>Statistics</li><li>Java Programming</li><li>Japanese Language</li><li>Economics</li><li>Algorithm &amp; Data Structure</li><li>AI releated Algorithm</li></ul><p>  这些学习内容需要在本科阶段完成，最终为今后的学习与工作提供帮助。</p><p>  我是夏目千咲，Idol M@sterが大好き，喜欢追番，有空可以相互交流。（虽然没什么朋友就是了，哼）</p><p>  望各位大佬轻喷，最后让我们学习kirin，说出那句：</p><p>  わかります！</p><p><br></p><p>  以上。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://equimph.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>建站成功</title>
+    <link href="http://equimph.com/2020/03/helloworld/"/>
+    <id>http://equimph.com/2020/03/helloworld/</id>
+    <published>2020-03-01T00:49:10.000Z</published>
+    <updated>2020-12-13T12:58:08.009Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="hello-world">Hello, World!</h2><p><br>   经过一番折腾，在某位好友的威逼利诱之下开启了本Blog，还请各位待见。</p><p>  希望Equmph能够持久，记录我的种种经历，成为我不可或缺的记忆。</p><p>  よろしくお願いいたします。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://equimph.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+</feed>
